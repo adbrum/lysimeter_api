@@ -25,7 +25,7 @@ SECRET_KEY = '1p$v)0of(+wchbp^rrd^vxhxbz0#g$ax33(0f=%$s(dw-mua!2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djongo',
+    'rest_framework',
+    'lysimeter',
 ]
 
 MIDDLEWARE = [
@@ -71,15 +74,20 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': True,
+        'NAME': 'lysimeter',
+        'HOST': 'ietsis.dynu.net',
+        'PORT': 27017,
+        'USER': 'root',
+        'PASSWORD': 'lisimetro',
     }
-}
 
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
