@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Sensor
+from .models import Reading
 
-class SensorAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(Sensor, SensorAdmin)
+# Register your models here.
+admin.site.register(Reading)
