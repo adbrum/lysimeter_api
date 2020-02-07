@@ -9,6 +9,6 @@ docker build .
 ou docker-compose up --build
 
 # DB Django
-docker exec -it [NOME DO CONTAINER] python manage.py makemigrations \n
-docker exec -it [NOME DO CONTAINER] python manage.py migrate
-docker exec -it [NOME DO CONTAINER] python manage.py createsuperuser
+docker exec -it [NOME DO CONTAINER] python manage.py makemigrations  
+docker exec -it [NOME DO CONTAINER] python manage.py migrate  
+docker exec -it [NOME DO CONTAINER] python manage.py createsuperuser  
