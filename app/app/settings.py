@@ -91,10 +91,10 @@ DATABASES = {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': True,
         'NAME': 'lysimeter',
-        'HOST': 'ietsis.dynu.net',
+        'HOST': '192.168.1.105',
         'PORT': 27017,
-        'USER': 'root',
-        'PASSWORD': 'lisimetro',
+        'USER': '',
+        'PASSWORD': '',
     }
 
 }
