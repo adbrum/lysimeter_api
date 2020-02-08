@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': True,
         'NAME': 'lysimeter',
-        'HOST': '192.168.1.96',
+        'HOST': '192.168.1.105',
         'PORT': 27017,
         'USER': '',
         'PASSWORD': '',
