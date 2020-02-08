@@ -27,11 +27,7 @@ SECRET_KEY = '1p$v)0of(+wchbp^rrd^vxhxbz0#g$ax33(0f=%$s(dw-mua!2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'ietsis.dynu.net'
-    ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -91,10 +87,10 @@ DATABASES = {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': True,
         'NAME': 'lysimeter',
-        'HOST': 'ietsis.dynu.net',
+        'HOST': '192.168.1.96',
         'PORT': 27017,
-        'USER': 'root',
-        'PASSWORD': 'lisimetro',
+        'USER': '',
+        'PASSWORD': '',
     }
 
 }
@@ -142,14 +138,17 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
-    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework_simplejwt.authentication.JWTAuthentication'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication'
+],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer']
+    #'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer']
 }
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = ['http://localhost:8000', 'http://127.0.0.1', 'http://ietsis.dynu.net:8000', 'http://188.37.176.54']
+CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000', 'http://localhost:8000', 'http://127.0.0.1', 'http://ietsis.dynu.net:8000', 'http://188.37.176.54']
 #CORS_ALLOW_METHODS = ['GET', 'POST', 'UPDATE', 'DELETE', 'PATCH', 'OPTIONS']   # option 1
 CORS_ALLOW_METHODS = list(corsheaders.defaults.default_methods)                # option 2
 CORS_ALLOW_HEADERS = list(corsheaders.defaults.default_headers)
