@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Reading
+from .models import*
 from rest_framework import serializers
 
 
@@ -15,7 +15,26 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 
-class ReadingSerializer(serializers.HyperlinkedModelSerializer):
+class DeviceParamsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Reading
-        fields = '__all__'
+        model = DeviceParams
+        fields = ("url", 
+        'id', 
+        'created_at',
+        'lysimeter',
+        'battery',
+        'ambient_temperature',
+        'ambient_humidity',
+        'ambient_light01',
+        'ambient_light02',
+        'soil_temperature01',
+        'soil_temperature02',
+        'soil_temperature03',
+        'soil_humidity01',
+        'soil_humidity02',
+        'soil_humidity03',
+        'lysimeter_weight',
+        'sediment_weight')
+
+
+        

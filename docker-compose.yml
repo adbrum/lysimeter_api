@@ -11,7 +11,7 @@ services:
     image: mongo-express:latest
     restart: always
     ports:
-      - 8081:8081
+      - 9081:8081
 
   web:
     restart: always
@@ -20,4 +20,4 @@ services:
     volumes:
       - ./app:/app
     ports:
-      - "8000:8000"
+      - "9000:8000"

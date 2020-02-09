@@ -10,13 +10,12 @@ from rest_framework_simplejwt.views import (
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'readings', views.ReadingViewSet)
+router.register(r'lysimeters', views.DeviceParamsViewSet)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('readings/list/', views.reading_list),
-    path('readings/<int:pk>', views.reading_detail),
     path('admin/', admin.site.urls),
     path('dashboard/', views.app),
     path('', include(router.urls)),
