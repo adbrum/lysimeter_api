@@ -148,8 +148,8 @@ REST_FRAMEWORK = {
     #'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer']
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000', 'http://localhost:8000', 'http://127.0.0.1', 'http://ietsis.dynu.net:8000', 'http://188.37.176.54']
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000', 'http://localhost:8000', 'http://127.0.0.1', 'http://ietsis.dynu.net:9000', 'http://192.168.1.105']
 #CORS_ALLOW_METHODS = ['GET', 'POST', 'UPDATE', 'DELETE', 'PATCH', 'OPTIONS']   # option 1
 CORS_ALLOW_METHODS = list(corsheaders.defaults.default_methods)                # option 2
 CORS_ALLOW_HEADERS = list(corsheaders.defaults.default_headers)

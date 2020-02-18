@@ -32,5 +32,6 @@ class DeviceParams(models.Model):
         return 'Reading: %d - Device Id: %s' % (self.id, self.lysimeter)
     
     class Meta:
+        ordering = ('-id', )
         verbose_name = "Lysimeter"
         verbose_name_plural = "Lysimeters"
