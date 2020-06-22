@@ -12,3 +12,6 @@ ou docker-compose up --build
 docker exec -it [NOME DO CONTAINER] python manage.py makemigrations  
 docker exec -it [NOME DO CONTAINER] python manage.py migrate  
 docker exec -it [NOME DO CONTAINER] python manage.py createsuperuser  
+
+# Docker update - Provide a --restart=always for the "docker start" command
+docker update --restart=always [container name]

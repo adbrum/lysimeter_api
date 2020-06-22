@@ -1,9 +1,0 @@
-version: "3"
-
-services:
-  script:
-    restart: always
-    build: .
-    command: python mqqtToMongoDB.py   
-    volumes:
-      - ./script:/script

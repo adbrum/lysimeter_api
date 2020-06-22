@@ -34,7 +34,8 @@ class DeviceParamsSerializer(serializers.HyperlinkedModelSerializer):
         'soil_humidity02',
         'soil_humidity03',
         'lysimeter_weight',
-        'sediment_weight')
+        'sediment_weight',
+        'date_time')
 
 
         

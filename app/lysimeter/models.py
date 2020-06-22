@@ -1,8 +1,8 @@
 from djongo import models
 from djongo.models import *
 
-
 class DeviceParams(models.Model):
+
     lysimeter = models.CharField(max_length=10)  # ID - Id lysimeter
     battery = models.CharField(max_length=10)  # SBV - battery voltage
    
@@ -26,11 +26,13 @@ class DeviceParams(models.Model):
     lysimeter_weight = models.CharField(max_length=10) # Weight sensor *
     sediment_weight = models.CharField(max_length=10) # Weight sensor *
 
+    date_time = models.CharField(max_length=20)  # DATETIME - Date and Time saved data
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
-        return 'Reading: %d - Device Id: %s' % (self.id, self.lysimeter)
-    
+        return 'Reading: %d - Device Id: %s - Date/Time: %s' % (self.id, self.lysimeter, self.date_time)
+
     class Meta:
         ordering = ('-id', )
         verbose_name = "Lysimeter"
